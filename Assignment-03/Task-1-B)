@@ -1,0 +1,33 @@
+Pop-up Boxes Implementation
+
+// Alert box on form submission
+function submitForm() {
+    alert("Form submitted successfully!");
+}
+
+// Confirmation box before deleting an item
+function deleteItem() {
+    let confirmDelete = confirm("Are you sure you want to delete this item?");
+    if (confirmDelete) {
+        alert("Item deleted successfully.");
+    } else {
+        alert("Item deletion canceled.");
+    }
+}
+
+// Prompt box to ask for user input and display it
+function askUserName() {
+    let name = prompt("Enter your name:");
+    if (name) {
+        document.body.innerHTML += `<p>Welcome, ${name}!</p>`;
+    } else {
+        alert("No name entered.");
+    }
+}
+
+// Example usage: Attach functions to buttons
+document.body.innerHTML += `
+    <button onclick="submitForm()">Submit Form</button>
+    <button onclick="deleteItem()">Delete Item</button>
+    <button onclick="askUserName()">Enter Name</button>
+`;
