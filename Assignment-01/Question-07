@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Registration</title>
+</head>
+<body>
+    <h1>Employee Registration Form</h1>
+    <form>
+        <fieldset>
+            <legend>Personal Information</legend>
+            <p>
+                <input type="radio" name="title" id="mr" checked>
+                <label for="mr">Mr.</label>
+                <input type="radio" name="title" id="mrs">
+                <label for="mrs">Mrs.</label>
+                <input type="radio" name="title" id="ms">
+                <label for="ms">Ms.</label>
+            </p>
+            <p>
+                <label for="fname">First Name:</label>
+                <input type="text" id="fname" name="fname" required>
+            </p>
+            <p>
+                <label for="lname">Last Name:</label>
+                <input type="text" id="lname" name="lname" required>
+            </p>
+            <p>
+                <label for="address1">Mail Address 1:</label>
+                <input type="text" id="address1" name="address1" required>
+            </p>
+            <p>
+                <label for="address2">Mail Address 2:</label>
+                <input type="text" id="address2" name="address2">
+                <span>(Optional)</span>
+            </p>
+            <p>
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required>
+            </p>
+            <p>
+                <label for="state">State:</label>
+                <select id="state" name="state" required>
+                    <option value="">Select State</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                </select>
+            </p>
+            <p>
+                <label for="zip">Zip:</label>
+                <input type="text" id="zip" name="zip" required>
+            </p>
+            <p>
+                <label for="photo">Upload Photo:</label>
+                <input type="file" id="photo" name="photo">
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Contact Information</legend>
+            <p>
+                <label for="email">E-Mail:</label>
+                <input type="email" id="email" name="email" required>
+            </p>
+            <p>
+                <label for="mobile">Mobile:</label>
+                <span>+91</span>
+                <input type="tel" id="mobile" name="mobile" required>
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Additional Information</legend>
+            <p>Languages known:</p>
+            <p>
+                <input type="checkbox" id="gujarati" name="languages" value="Gujarati" checked>
+                <label for="gujarati">Gujarati</label>
+                
+                <input type="checkbox" id="hindi" name="languages" value="Hindi" checked>
+                <label for="hindi">Hindi</label>
+                
+                <input type="checkbox" id="english" name="languages" value="English" checked>
+                <label for="english">English</label>
+                
+                <input type="checkbox" id="marathi" name="languages" value="Marathi">
+                <label for="marathi">Marathi</label>
+            </p>
+        </fieldset>
+
+        <p>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </p>
+    </form>
+</body>
+</html>
