@@ -1,0 +1,44 @@
+ Event Handling & DOM Manipulation
+
+// Change text, style, or images on button click
+function changeText() {
+    let textElement = document.getElementById("text");
+    textElement.innerText = "Text has been changed!";
+    textElement.style.color = "blue";
+    textElement.style.fontSize = "20px";
+}
+
+// Implement hover effects using JavaScript events
+function hoverEffect(element) {
+    element.style.backgroundColor = "yellow";
+}
+function removeHoverEffect(element) {
+    element.style.backgroundColor = "white";
+}
+
+// Create a dynamic list where users can add or remove items
+function addItem() {
+    let input = document.getElementById("itemInput").value;
+    if (input.trim() !== "") {
+        let li = document.createElement("li");
+        li.innerText = input;
+        li.onclick = function() { this.remove(); };
+        document.getElementById("itemList").appendChild(li);
+    }
+    document.getElementById("itemInput").value = "";
+}
+
+document.body.innerHTML += `
+    <p id="text">Click the button to change this text.</p>
+    <button onclick="changeText()">Change Text</button>
+    
+    <div onmouseover="hoverEffect(this)" onmouseout="removeHoverEffect(this)" style="width: 200px; height: 50px; border: 1px solid black; text-align: center; line-height: 50px;">Hover Over Me</div>
+    
+    <input type="text" id="itemInput" placeholder="Enter item">
+    <button onclick="addItem()">Add Item</button>
+    <ul id="itemList"></ul>
+
+    <button onclick="submitForm()">Submit Form</button>
+    <button onclick="deleteItem()">Delete Item</button>
+    <button onclick="askUserName()">Enter Name</button>
+`;
