@@ -1,0 +1,12 @@
+<html>
+<head>
+    <title>Image Link</title>
+</head>
+<body>
+    <h1>Image as a Link</h1>
+    <a href="another_page.html">
+        <img src="example.jpg" alt="Clickable Image" width="300">
+    </a>
+    <p>Click on the image to go to another page</p>
+</body>
+</html>
