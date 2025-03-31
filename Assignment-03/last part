@@ -1,0 +1,49 @@
+To-Do List App
+function addTask() {
+    let taskInput = document.getElementById("taskInput");
+    let taskList = document.getElementById("taskList");
+    if (taskInput.value.trim() === "") return;
+
+    let li = document.createElement("li");
+    li.innerHTML = `${taskInput.value} <button onclick="removeTask(this)">Delete</button> <button onclick="completeTask(this)">Complete</button>`;
+    taskList.appendChild(li);
+    taskInput.value = "";
+}
+
+function removeTask(button) {
+    button.parentElement.remove();
+}
+
+function completeTask(button) {
+    button.parentElement.style.textDecoration = "line-through";
+}
+
+// 8. Simple Chatbot
+function chat() {
+    let userMessage = document.getElementById("userInput").value.toLowerCase();
+    let chatOutput = document.getElementById("chatOutput");
+    let response = "";
+
+    if (userMessage.includes("hello")) {
+        response = "Hi there! How can I help you?";
+    } else if (userMessage.includes("how are you")) {
+        response = "I'm just a bot, but I'm doing great!";
+    } else {
+        response = "Sorry, I don't understand that.";
+    }
+
+    chatOutput.innerHTML += `<p><b>You:</b> ${userMessage}</p><p><b>Bot:</b> ${response}</p>`;
+    document.getElementById("userInput").value = "";
+}
+
+document.body.innerHTML += `
+    <h3>To-Do List</h3>
+    <input type="text" id="taskInput" placeholder="New Task">
+    <button onclick="addTask()">Add Task</button>
+    <ul id="taskList"></ul>
+    
+    <h3>Simple Chatbot</h3>
+    <input type="text" id="userInput" placeholder="Say something...">
+    <button onclick="chat()">Send</button>
+    <div id="chatOutput"></div>
+`;
